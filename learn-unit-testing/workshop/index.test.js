@@ -36,3 +36,39 @@ function equal(actual, expected, message) {
 //   equal(name, expectedName);
 //   equal(email, expectedEmail);
 // });
+
+test("is 4 a leap year", () => {
+  const result = isLeapYear(4);
+  const expected = true;
+  equal(result, expected);
+});
+test("is 2000 a leap year", () => {
+  const result = isLeapYear(2000);
+  const expected = true;
+  equal(result, expected);
+});
+test("is 77 a leap year", () => {
+  const result = isLeapYear(77);
+  const expected = false;
+  equal(result, expected);
+});
+test("is a negative number a leap year", () => {
+  const result = isLeapYear(-400);
+  const expected = "error";
+  equal(result, expected);
+});
+test("is a boolean a leap year", () => {
+  const result = isLeapYear(true);
+  const expected = "error";
+  equal(result, expected);
+});
+test("is 999999999999999 a leap year", () => {
+  const result = isLeapYear(999999999999999);
+  const expected = false;
+  equal(result, expected);
+});
+test("is a function a leap year", () => {
+  const result = isLeapYear(console.log());
+  const expected = "error";
+  equal(result, expected);
+});
